@@ -1,5 +1,7 @@
 package ru.vsu.cs.course1.tree;
 
+import com.sun.xml.internal.ws.api.model.wsdl.WSDLOutput;
+
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Queue;
@@ -313,4 +315,23 @@ public class BinaryTreeAlgorithms {
 
         return sb.toString();
     }
+
+    private static class Counter {
+        public static int rightCount = 0;
+        public static int leftCount = 0;
+    }
+
+    public static class LeftRightResult {
+
+    }
+    public static <T> LeftRightResult findLeftRight(BinaryTree.TreeNode<T> treeNode) {
+        int count = 0;
+        treeNode.getRight();
+        return null;
+    }
+
+    private static <T> LeftRightResult findLRrec(BinaryTree.TreeNode<T> n, int x) {
+        return null;
+    }
+
 }
