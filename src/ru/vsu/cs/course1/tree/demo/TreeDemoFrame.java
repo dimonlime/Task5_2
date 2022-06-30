@@ -276,8 +276,7 @@ public class TreeDemoFrame extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 if (tree == null)
                     return;
-                BinaryTreeAlgorithms.LeftRightResult r = BinaryTreeAlgorithms.findLeftRight(tree.getRoot());
-
+                BinaryTreeAlgorithms.findLeftRight(tree.getRoot());
             }
         });
     }

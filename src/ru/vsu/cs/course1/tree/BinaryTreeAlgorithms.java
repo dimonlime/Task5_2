@@ -325,12 +325,29 @@ public class BinaryTreeAlgorithms {
 
     }
     public static <T> LeftRightResult findLeftRight(BinaryTree.TreeNode<T> treeNode) {
-        int count = 0;
-        treeNode.getRight();
+        BinaryTreeAlgorithms.findLRrec(treeNode, 0);
+        System.out.println(Counter.leftCount + " " + Counter.rightCount);
+        Counter.rightCount = 0;
+        Counter.leftCount = 0;
         return null;
     }
 
     private static <T> LeftRightResult findLRrec(BinaryTree.TreeNode<T> n, int x) {
+        if (x > 0) {
+            Counter.rightCount++;
+        } else if (x < 0) {
+            Counter.leftCount++;
+        }
+        if(n.getLeft() != null && n.getRight() != null) {
+            BinaryTreeAlgorithms.findLRrec(n.getRight(), ++x);
+            BinaryTreeAlgorithms.findLRrec(n.getLeft(), --x);
+        } else if (n.getLeft() == null && n.getRight() != null) {
+            BinaryTreeAlgorithms.findLRrec(n.getRight(), ++x);
+        } else if (n.getRight() == null && n.getLeft() != null) {
+            BinaryTreeAlgorithms.findLRrec(n.getLeft(), --x);
+        } else {
+            return null;
+        }
         return null;
     }
 
