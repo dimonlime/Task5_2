@@ -326,7 +326,7 @@ public class BinaryTreeAlgorithms {
     }
     public static <T> LeftRightResult findLeftRight(BinaryTree.TreeNode<T> treeNode) {
         BinaryTreeAlgorithms.findLRrec(treeNode, 0);
-        System.out.println(Counter.leftCount + " " + Counter.rightCount);
+        System.out.println("Кол-во левых: " + Counter.leftCount + " Кол-во правых: " + Counter.rightCount);
         Counter.rightCount = 0;
         Counter.leftCount = 0;
         return null;
@@ -340,7 +340,7 @@ public class BinaryTreeAlgorithms {
         }
         if(n.getLeft() != null && n.getRight() != null) {
             BinaryTreeAlgorithms.findLRrec(n.getRight(), ++x);
-            BinaryTreeAlgorithms.findLRrec(n.getLeft(), --x);
+            BinaryTreeAlgorithms.findLRrec(n.getLeft(), x-2);
         } else if (n.getLeft() == null && n.getRight() != null) {
             BinaryTreeAlgorithms.findLRrec(n.getRight(), ++x);
         } else if (n.getRight() == null && n.getLeft() != null) {
